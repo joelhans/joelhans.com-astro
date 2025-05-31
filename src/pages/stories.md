@@ -1,0 +1,174 @@
+---
+layout: ../layouts/Main.astro
+title: Stories
+description: All my published short stories from 2010-present.
+---
+
+## Forthcoming
+
+&ldquo;Mouth, Wormhole, Window&rdquo; — _Fusion Fragment_
+
+## 2025
+
+&ldquo;Propp’s Thirty-One Functions for a Girl Living Inside an Apple&rdquo; — _Fairy Tale Review_
+
+&ldquo;Sapling by Shingle by Soot&rdquo; — _Passages North_
+
+## 2024
+
+[&ldquo;The Cirrus Circus&rdquo;](https://theoffingmag.com/fiction/the-cirrus-circus/) — _The Offing_
+
+[&ldquo;The Papermoon&rdquo;](https://www.havehashad.com/hadposts/the-papermoon) — _HAD_
+
+[&ldquo;An Interrogation of the Official State Fossil of Indiana&rdquo;](https://www.cottonxenomorph.com/journal/2024/7/02-an-interrogation-of-the-official-state-fossil-of-indiana) — _Cotton Xenomorph_
+
+## 2023
+
+[&ldquo;The Bedtime Emptying of Our World&rdquo;](https://flash-frog.com/2023/12/25/the-bedtime-emptying-of-our-world-by-joel-hans/) — _Flash Frog_
+<span class="block text-lg ml-8">Finalist in the 2023 _Flash Frog_ Blue Frog contest</span>
+<span class="block text-lg ml-8">Nominated for the _Best Small Fictions_ and _Best American Short Stories_!</span>
+
+[&ldquo;The Flamingo&rdquo;](https://www.havehashad.com/hadposts/the-flamingo) — _HAD_
+
+[&ldquo;Once, You Were Asked to Count the Hummingbirds&rdquo;](https://newflashfiction.com/once-you-were-asked/) — _New
+Flash Fiction Review_
+
+[&ldquo;Once, the Sound Dad and I Loved Most&rdquo;](https://variantlit.com/once-the-sound/) — _Variant Literature_
+
+[&ldquo;When Stars Are Just Stars&rdquo;](https://www.peatsmokejournal.com/summer-2023-flash/joel-hans) — _Peatsmoke_ 
+<span class="block text-lg ml-8">Nominated for _Best Small Fictions_!</span>
+
+[&ldquo;A Protest of Tortoise&rdquo;](https://gonelawn.net/journal/issue50/Hans.php) — _Gone Lawn_ 
+<span class="block text-lg ml-8">Nominated for the _Pushcart Prize_!</span>
+
+[&ldquo;Once, Three Brothers Guided Two Moons Across the
+Sky&rdquo;](https://fracturedlit.com/once-three-brothers-guided-two-moons-across-the-sky/) — _Fractured Lit_
+
+[&ldquo;Two Decorated Skulls in the Miramonte Swamp&rdquo;](https://www.storymagazine.org/store/spring-2023-issue-16/) —
+_Story_, Issue 16 
+<span class="block text-lg ml-8">Nominated for the _Pushcart Prize_!</span>
+
+[&ldquo;On Return from the Land Where One Never Dies&rdquo;](https://thejournalmag.org/archives/21817) — _The Journal_
+
+[&ldquo;The Earth, Measured&rdquo;](https://ceasecows.com/2023/03/16/the-earth-measured-by-joel-hans/) — _Cease, Cows_ 
+<span class="block text-lg ml-8">Nominated for _Best Microfiction_ and _Best Small Fictions_!</span>
+
+[&ldquo;The Times I Traded Time With the Crows&rdquo;](https://atlasandalice.com/2023/01/30/fiction-from-joel-hans/) —
+_Atlas and Alice_ 
+<span class="block text-lg ml-8">Anthologized in _Best Small Fictions_!</span>
+
+[&ldquo;Feeding the Oscars&rdquo;](https://trampset.org/feeding-the-oscars-4a185c627e87) — _trampset_
+
+## 2022
+
+[&ldquo;The Princess on the Glass Hill
+Becoming&rdquo;](https://crowcrosskeys.com/2022/11/19/the-princess-on-the-glass-hill-becoming-joel-hans/) — _Crow &
+Cross Keys_
+
+[&ldquo;The Reception&rdquo;](https://occulum.net/2022/11/05/the-reception-joel-hans/) — _Occulum_
+
+[&ldquo;Meal Prep&rdquo;](https://nurtureliterary.com/post/700241889800126465/meal-prep) — _Nurture_
+
+[&ldquo;Beneath the Undergarden&rdquo;](https://www.tinymolecules.com/issues/fourteen#joel-hans) — _Tiny Molecules_
+
+[&ldquo;Attn: Butchers &amp; Locksmiths”](https://hexliterary.com/?p=550) — _hex literary_
+
+[“First it Was the
+Brushfires”](https://www.puertodelsol.org/single-post/puerto-del-pasado-artifacts-from-the-archives-joel-hans-s-first-it-was-the-brushfires)
+— _Puerto del Sol_, republished online from Vol. 53
+
+## 2020
+
+[“A Man, His Oblations”](http://notokensjournal.com/fiction/a-man-his-oblations/) — _No Tokens_, republished online from Issue No. 2
+
+## 2018
+
+“The Aunt of Everything” – _West Branch_, issue 88 ([view the PDF version](/static/writing/The-Aunt-of-Everything.pdf)
+or [buy a copy of the issue](http://westbranch.blogs.bucknell.edu/west-branch-88-fall-2018/10/2018/))
+
+“First it Was the Brushfires” — _Puerto del Sol_, Vol. 53, The Science Issue ([read it
+online](https://www.puertodelsol.org/single-post/2018/03/14/vol-53-the-science-issue-spring-2018) or [buy a
+copy](https://www.puertodelsol.org/single-post/2018/03/14/vol-53-the-science-issue-spring-2018))
+
+## 2017
+
+[“Does Yours Have a Heart, Too?"](http://greenmountainsreview.com/doesyourshaveaheart/) — _Green Mountains Review_
+
+## 2016
+
+[“Evaporation”](http://www.theadroitjournal.org/issue-eighteen-joel-hans-the-adroit-journal) — _The Adroit Journal_
+
+[“The Boomslang Coup”](https://mastersreview.com/new-voices/the-boomslang-coup-by-joel-hans/) — _The Masters Review_
+
+[“Jackalope”](https://web.archive.org/web/20161003090519/http://noblegas.org/issue-203-3/birdwhistle-prize/joel-hans/jackalope/)
+— _Noble / Gas Quarterly_
+
+“Ghosts of Wildly Different Species” — [_Eleven Eleven_](http//www.spdbooks.org/Products/24304/eleven-eleven-21.aspx), issue 21 (print only)
+
+## 2015
+
+[“Whisperingbird” & “Hellhound” & “Astral Glider”](https://newsouthjournal.com/2015/11/02/micro-prose-three-pieces-by-joel-hans/) — _New South_
+
+[“Apatosaurus”](http://atticusreview.org/apatosaurus/) — _Atticus Review_
+
+<StoryQuote story="Apatosaurus">The apatosaurus looks over at her lover as the ashcloud descends. Somehow, she knows that his bones will be uncovered, and hers will not.</StoryQuote>
+
+“Ochre Unicorn” — [_Yemassee_](http://yemasseejournal.com/) (print only)
+<span class="block text-lg ml-8">[Translated into Spanish](https://web.archive.org/web/20160315211540/http://yemasseejournal.com/post/140279765242/yemassee-in-translation-ochre-unicorn-by-joel) by Julia Velasco!</span>
+
+“Black-Clawed Rapturus” & “Sea Elephant” & “Giant Beaver” — [_Sundog Lit_](https://sundoglit.com/2015/06/01/issue-8-is-available/), Issue 8 (print only)
+
+[“Once There Was an Upside-Down Girl”](http://booth.butler.edu/2015/05/22/once-there-was-an-upside-down-girl/) — _Booth: A Journal_
+
+“Crepuscular Bear” & “Tree Needler” & “Thick-Skinned Buffali” — _Caketrain_, [Issue 12](http://caketrain.org/12/) (print only)
+
+[“Opal Feldwing” & “Gray Flix” & “Martian Globules”](http://www.wyvernlit.com/four/joel-hans) — _Wyvern Lit_
+
+[“Cardinine, Seafoamyst, Morningite”](https://west-branch-wired.bucknell.edu/past-issues-of-wired/winter-2015/joel-hans.html) — _West Branch_
+
+[“Humongous Doubleray” & “Planet” & “Protenean Amoeba”](http://202.2.noblegas.org/) — _Noble / Gas Qtrly_
+
+## 2014
+
+“A Man, His Oblations” — _No Tokens_, issue 2 ([read it online](http://notokensjournal.com/fiction/a-man-his-oblations/) or [buy a copy](http://notokensjournal.com/issue-2/))
+
+[“The Harras’ Surveyance”](http://sporkpress.com/?p=5077) — _Spork Press_
+
+[“The Great Horned Owls’ Beheadings”](https://www.biglucks.com/journal/joel-hans) — _Big Lucks_
+
+[“Ghosts in the Termini”](http://www.fwrictionreview.com/post/94715855560/ghosts-in-the-termini-by-joel-hans) — _fwriction : review_
+
+[“Darkest Spots in the Galaxy”](https://web.archive.org/web/20170506224924/http://thecollapsar.com/2014/06/03/hans/) —
+_The Collapsar_
+
+“The Ouachita Map Turtle’s Fissure” — _Pear Noir!_, issue 10 (out of print)
+
+[“The Hummingbird’s Anti-Torpor”](http://spartanlit.com/the-hummingbirds-anti-torpor) — _Spartan_, Winter Issue
+
+## 2013
+
+“Subsoil” — [_Redivider_](http://redividerjournal.org/) 11.1 (print only)
+
+[“If You Look Long Enough You See That Everything Is A-Passing”](http://www.joomag.com/magazine/psychopomp-magazine-fall-2013/0768091001380984003) — _Psychopomp Magazine_
+
+[“Day 4,372”](http://necessaryfiction.com/stories/JoelHansDay4372) — _Necessary Fiction_
+
+[“The Holstein’s Stillborn”](http://pitheadchapel.com/the-holsteins-stillborn/) — _Pithead Chapel_
+
+[“The Warbler’s Necropsy”](https://as.vanderbilt.edu/nashvillereview/archives/6690) — _Nashville Review_
+
+“Factor VIII” — _The Ampersand Review_
+
+“The Blinding in Horticulture, Texas” — _Fringe Magazine_
+
+## 2012
+
+“Dig” — _The Lindenwood Review_
+
+[“Panthera”](http://scholar.valpo.edu/vfr/vol2/iss1/7/)— _Valparaiso Fiction Review_
+
+“Fear of—” — _Owen Wister Review_
+
+## 2010
+
+“Dossiers” — _Word Riot_
