@@ -12,6 +12,18 @@
   --font-serif: 'Alegreya Variable', 'serif';
 }
 
+@utility prose {
+    blockquote {
+        /* Disable adding quote marks to block-quotes: https://github.com/tailwindlabs/tailwindcss-typography/issues/66 */
+        p {
+            &:first-of-type::before,
+            &:last-of-type::after {
+                content: none;
+            }
+        }
+    }
+}
+
 :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
@@ -64,12 +76,6 @@ pre {
 }
 pre > code {
 	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
 }
 hr {
 	border: none;
