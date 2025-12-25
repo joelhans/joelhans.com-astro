@@ -6,7 +6,6 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 const { title, description, pubDate, updatedDate, frontmatter } = Astro.props;
 
-console.log(frontmatter)
 ---
 
 <html lang="en">
@@ -16,7 +15,7 @@ console.log(frontmatter)
   <body class="text-slate-700">
 		<Header />
     <main class="max-w-4xl m-auto py-24 lg:py-48 px-8 font-serif text-slate-700">
-      <article class="prose prose lg:prose-xl prose-headings:font-medium prose-a:hover:text-emerald-600 max-w-full">
+      <article class="prose lg:prose-xl prose-headings:font-medium prose-a:hover:text-emerald-600 max-w-full">
         <slot />
       </article>
 		</main>

@@ -15,9 +15,9 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 		<BaseHead title={title} description={description} />
   </head>
   <body class="text-slate-700">
-		<Header />
-    <main class="max-w-4xl m-auto py-48 px-8 font-serif text-slate-700">
-      <article class="prose prose-xl prose-headings:font-medium prose-a:hover:text-emerald-600 max-w-full">
+    <Header />
+    <main class="max-w-4xl m-auto py-24 lg:py-48 px-8 font-serif text-slate-700">
+      <article class="prose lg:prose-xl prose-headings:font-medium prose-blockquote:font-normal prose-a:hover:text-emerald-600 max-w-full">
         <h1 class="mb-2">{title}</h1>
         <div class="font-sans text-lg mb-18">
           <FormattedDate date={pubDate} />
