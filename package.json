@@ -9,22 +9,22 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.4.0",
-    "@fontsource-variable/alegreya": "^5.2.5",
-    "@fontsource-variable/archivo": "^5.2.5",
-    "@fontsource/alegreya": "^5.2.5",
-    "@fontsource/alegreya-sans": "^5.2.5",
-    "@fontsource/archivo": "^5.2.5",
-    "@tailwindcss/vite": "^4.1.7",
-    "astro": "^5.8.0",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "@fontsource-variable/alegreya": "^5.2.8",
+    "@fontsource-variable/archivo": "^5.2.8",
+    "@fontsource/alegreya": "^5.2.8",
+    "@fontsource/alegreya-sans": "^5.2.8",
+    "@fontsource/archivo": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.17.1",
     "astro-icon": "^1.1.5",
-    "astro-navbar": "^2.3.9",
-    "tailwindcss": "^4.1.7"
+    "astro-navbar": "^2.4.0",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.2.36",
-    "@tailwindcss/typography": "^0.5.16"
+    "@iconify-json/simple-icons": "^1.2.70",
+    "@tailwindcss/typography": "^0.5.19"
   }
 }
