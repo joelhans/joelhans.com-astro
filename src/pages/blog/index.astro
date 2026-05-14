@@ -21,7 +21,7 @@ const posts = (await getCollection('blog')).sort(
   {
     posts.map((post) => (
       <div class="mb-18">
-        <h2 class="mt-0 mb-4">
+        <h2 class="mt-0 mb-4 text-balance">
           <a href={`/blog/${post.id}/`}>
             {post.data.title}
           </a>
