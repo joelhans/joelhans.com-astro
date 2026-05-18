@@ -14,6 +14,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/alegreya": "^5.2.8",
     "@fontsource-variable/archivo": "^5.2.8",
+    "@fontsource-variable/geist-mono": "^5.2.7",
     "@fontsource/alegreya": "^5.2.8",
     "@fontsource/alegreya-sans": "^5.2.8",
     "@fontsource/archivo": "^5.2.8",
@@ -21,6 +22,7 @@
     "astro": "^6.3.3",
     "astro-icon": "^1.1.5",
     "astro-navbar": "^2.4.0",
+    "remark-smartypants": "^3.0.2",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {

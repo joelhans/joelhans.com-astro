@@ -1,15 +1,70 @@
 ---
 import Main from '../layouts/Main.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog'))
+  .filter(e => e.data.archive !== true)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const latestFictionPost = posts.find(p => (p.data.mode ?? 'fiction') === 'fiction');
+const latestTechPost = posts.find(p => p.data.mode === 'tech');
 ---
 
 <Main
-	title="Joel Hans"
-	description="Joel Hans is a writer in Tucson, Arizona."
-	pubDate={new Date('May 31 2025')}
-  >
-  <h1 class="text-2xl lg:text-4xl font-medium leading-normal mb-12 lg:mb-18">Joel Hans is a writer in Tucson, Arizona.</h1>
-  <p class="text-xl lg:text-2xl mb-12">His debut short story collection, <span class="italic [font-variant:small-caps]">The Bedtime Emptying of Our World</span>, won the 2024 Moon City Short Fiction award and will be published in February 2026 with Moon City Press. <a href="/collection">Read more about the collection &rarr;</a></p>
-  <p class="text-xl lg:text-2xl">His fiction has been published in <em>Fairy Tale Review</em>, <em>Story</em>, <em>West Branch</em>, <em>Booth: A Journal</em>, <em>Passages North</em>, <em>HAD</em>, and many others, and has been anthologized in <em>Best Small Fictions</em>. He received his MFA from the University of Arizona, and now edits <a href="https://astrolabe.ooo"><em>Astrolabe</em></a>, a literary journal in the form of a dynamic universe.</p>
+  title="Joel Hans"
+  description="Joel Hans is a writer in Tucson, Arizona."
+  pubDate={new Date('May 31 2025')}
+>
+  <div data-show="fiction">
+    <h1 class="text-2xl lg:text-4xl font-medium leading-normal !mb-2">I&rsquo;m a fiction writer.</h1>
+    <p class="not-prose font-sans text-sm text-slate-400 mb-12 lg:mb-18">
+      <button data-mode-trigger="tech" class="cursor-pointer hover:text-emerald-600 transition-colors">I also do developer relations &rarr;</button>
+    </p>
+    <p class="text-xl lg:text-2xl mb-12">My debut short story collection, <span class="italic [font-variant:small-caps]">The Bedtime Emptying of Our World</span>, won the 2024 Moon City Short Fiction Award from Moon City Press.</p>
+    <p><a href="/collection">Read more about the collection &rarr;</a></p>
+    <p class="text-xl lg:text-2xl">My fiction has been published in <em>Fairy Tale Review</em>, <em>Story</em>, <em>West Branch</em>, <em>Booth: A Journal</em>, <em>Passages North</em>, <em>HAD</em>, and many others, and has been anthologized in <em>Best Small Fictions</em>. I received my MFA in fiction from the University of Arizona, and I now help edit <a href="https://astrolabe.ooo"><em>Astrolabe</em></a>, a literary journal in the form of a dynamic universe.</p>
+  </div>
+
+  <div data-show="tech">
+    <h1 class="text-2xl lg:text-4xl font-medium leading-normal !mb-2">I&rsquo;m a developer education and relations leader.</h1>
+    <p class="not-prose font-sans text-sm text-slate-400 mb-12 lg:mb-18">
+      <button data-mode-trigger="fiction" class="cursor-pointer hover:text-emerald-600 transition-colors">I also write fiction &rarr;</button>
+    </p>
+    <p class="text-xl lg:text-2xl mb-12">I head up developer education and marketing at ngrok and I love it. Before that, I consulted for companies like Aikido Security, Rewind, Testkube, Zuplo, and Netdata through my (now-defunct, one-person) agency: <a href="https://commitcopy.com" target="_blank">Commit</a>.</p>
+    <p> 
+    <p class="text-xl lg:text-2xl">My current passion projects are <a href="https://astrolabe.ooo" target="_blank">Astrolabe</a>, a literary magazine built on Astro and a wild D3 visualization, and <a href="https://github.com/joelhans/bmo-agent" target="_blank">bmo</a>, an agent harness designed for self-improvement.</p>
+  </div>
+
+  {latestFictionPost && (
+    <div class="not-prose mt-16 pt-12 border-t border-slate-300 font-sans" data-show="fiction">
+      <p class="text-xs text-slate-400 uppercase tracking-widest mb-3">Latest</p>
+      <p class="text-xl font-medium mb-1">
+        <a href={`/blog/${latestFictionPost.id}/`} class="hover:text-emerald-600 transition-colors">{latestFictionPost.data.title}</a>
+      </p>
+      <p class="text-sm text-slate-400"><FormattedDate date={latestFictionPost.data.pubDate} /></p>
+    </div>
+  )}
+  {latestTechPost && (
+    <div class="not-prose mt-16 pt-12 border-t border-slate-300 font-sans" data-show="tech">
+      <p class="text-xs text-slate-400 uppercase tracking-widest mb-3">Latest</p>
+      <p class="text-xl font-medium mb-1">
+        <a href={`/blog/${latestTechPost.id}/`} class="hover:text-emerald-600 transition-colors">{latestTechPost.data.title}</a>
+      </p>
+      <p class="text-sm text-slate-400"><FormattedDate date={latestTechPost.data.pubDate} /></p>
+    </div>
+  )}
 </Main>
 
+<script>
+  document.querySelectorAll<HTMLElement>('[data-mode-trigger]').forEach(el => {
+    el.addEventListener('click', () => {
+      const mode = el.dataset.modeTrigger!;
+      document.documentElement.dataset.mode = mode;
+      localStorage.setItem('mode', mode);
+      document.querySelectorAll<HTMLButtonElement>('#mode-switch button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === mode);
+      });
+    });
+  });
+</script>

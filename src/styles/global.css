@@ -7,9 +7,21 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Content sections (homepage bios, blog posts) */
+[data-show="tech"] { display: none; }
+html[data-mode="tech"] [data-show="tech"] { display: block; }
+html[data-mode="tech"] [data-show="fiction"] { display: none; }
+
+/* Nav mode groups — display:contents makes the wrapper div transparent to flex layout */
+[data-mode-show="fiction"] { display: contents; }
+[data-mode-show="tech"] { display: none; }
+html[data-mode="tech"] [data-mode-show="tech"] { display: contents; }
+html[data-mode="tech"] [data-mode-show="fiction"] { display: none; }
+
 @theme {
   --font-sans: 'Archivo Variable', 'Inter', 'sans-serif';
   --font-serif: 'Alegreya Variable', 'serif';
+  --font-mono: 'Geist Mono Variable', monospace;
 }
 
 @utility prose {
