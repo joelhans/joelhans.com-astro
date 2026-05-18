@@ -8,21 +8,30 @@ import { Icon } from 'astro-icon/components'
 <header>
   <Astronav>
     <nav class="flex items-center max-w-4xl m-auto px-8 pt-12">
-      <div class="flex w-full lg:w-auto justify-between">
-        <h2><a href="/" class="font-sans text-2xl font-black hover:text-emerald-600 [font-variant:small-caps]">{SITE_TITLE}</a></h2>
+      <div class="flex w-full lg:w-auto justify-between items-start">
+        <div class="flex flex-col min-[400px]:flex-row items-start min-[400px]:items-center gap-1 min-[400px]:gap-6">
+          <h2><a href="/" class="font-sans text-2xl font-black hover:text-emerald-600 [font-variant:small-caps]">{SITE_TITLE}</a></h2>
+          <div id="mode-switch" class="text-slate-400 flex items-baseline gap-1">
+            <button class="font-serif text-base" data-mode="fiction">fiction</button>
+            <span class="leading-[0] relative top-[2px]" aria-hidden="true">/</span>
+            <button class="font-mono text-sm font-medium" data-mode="tech">tech</button>
+          </div>
+        </div>
         <div class="z-20 block lg:hidden">
-          <MenuIcon class="w-4 h-4 cursor-pointer text-gray-800" />
+          <MenuIcon class="relative top-[5px] w-6 h-6 cursor-pointer text-gray-800" />
         </div>
       </div>
       <MenuItems class="z-10 hidden absolute w-full lg:w-auto h-full lg:h-auto inset-0 lg:relative flex lg:flex flex-col lg:flex-row items-start lg:items-center ml-auto px-8 pt-12 lg:p-0">
-        <HeaderLink href="/collection" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Collection</HeaderLink>
-        <HeaderLink href="/stories" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Stories</HeaderLink>
-        <HeaderLink href="/blog" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Blog/news</HeaderLink>
-        <HeaderLink href="/contact" class="text-2xl lg:text-lg hover:text-emerald-600 mb-8 lg:mb-0 lg:mr-8">Contact me</HeaderLink>
-        <div class="flex items-start lg:items-center">
+        <div data-mode-show="fiction">
+          <HeaderLink href="/collection" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Collection</HeaderLink>
+          <HeaderLink href="/stories" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Stories</HeaderLink>
+          <HeaderLink href="/blog" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Blog</HeaderLink>
+        </div>
+        <HeaderLink href="/contact" class="text-2xl lg:text-lg hover:text-emerald-600 mb-8 lg:mb-0 lg:mr-6">Contact me</HeaderLink>
+        <div class="flex items-start lg:items-center mr-6">
           <a class="hover:text-emerald-600 mr-4" href="https://bsky.app/profile/joelhans.com" target="_blank">
             <span class="sr-only">Follow me on BlueSky</span>
-            <Icon name="simple-icons:bluesky"  />
+            <Icon name="simple-icons:bluesky" />
           </a>
           <a class="hover:text-emerald-600" href="https://www.instagram.com/_joelhans/" target="_blank">
             <span class="sr-only">Follow me on Instagram</span>
@@ -34,8 +43,39 @@ import { Icon } from 'astro-icon/components'
   </Astronav>
 </header>
 
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('#mode-switch button');
+  const currentMode = document.documentElement.dataset.mode || 'fiction';
+
+  buttons.forEach(btn => {
+    if (btn.dataset.mode === currentMode) btn.classList.add('active');
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.mode!;
+      localStorage.setItem('mode', mode);
+      const path = window.location.pathname.replace(/\/$/, '') || '/';
+      const staysInPlace = ['/', '/blog', '/contact'].includes(path);
+      if (staysInPlace) {
+        document.documentElement.dataset.mode = mode;
+        buttons.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+      } else {
+        window.location.href = '/';
+      }
+    });
+  });
+</script>
+
 <style>
   nav {
     background: rgb(235, 245, 242);
+  }
+  #mode-switch button {
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  #mode-switch button:hover {
+    color: rgb(51 65 85);
+  }
+  #mode-switch button.active {
+    color: rgb(5 150 105);
   }
 </style>

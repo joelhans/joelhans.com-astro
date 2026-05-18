@@ -1,36 +1,32 @@
 ---
 import Main from '../../layouts/Main.astro';
-
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
-	  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  ).filter(
-    e => e.data.archive !== true,
-  );
-
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+).filter(
+  e => e.data.archive !== true,
+);
 ---
 
 <Main
   title="Blog"
-	description="starst."
-	pubDate={new Date('May 31 2025')}
-  >
+  description="Writing, news, and notes from Joel Hans."
+  pubDate={new Date('May 31 2025')}
+>
   {
     posts.map((post) => (
-      <div class="mb-18">
-        <h2 class="mt-0 mb-4 text-balance">
-          <a href={`/blog/${post.id}/`}>
+      <div class="not-prose font-sans mb-12" data-show={post.data.mode ?? 'fiction'}>
+        <p class="text-xl font-medium mb-1">
+          <a href={`/blog/${post.id}/`} class="hover:text-emerald-600 transition-colors">
             {post.data.title}
           </a>
-        </h2>
-        <p class="text-base font-sans">
+        </p>
+        <p class="text-sm text-slate-400">
           <FormattedDate date={post.data.pubDate} />
         </p>
       </div>
     ))
   }
 </Main>
-
