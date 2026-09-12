@@ -1,7 +1,7 @@
 ---
 import Main from '../../layouts/Main.astro';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import ReadingLink from '../../components/ReadingLink.astro';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -11,22 +11,13 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Main
-  title="Blog"
+  title="Thoughts"
   description="Writing, news, and notes from Joel Hans."
   pubDate={new Date('May 31 2025')}
 >
-  {
-    posts.map((post) => (
-      <div class="not-prose font-sans mb-12" data-show={post.data.mode ?? 'fiction'}>
-        <p class="text-xl font-medium mb-1">
-          <a href={`/blog/${post.id}/`} class="hover:text-emerald-600 transition-colors">
-            {post.data.title}
-          </a>
-        </p>
-        <p class="text-sm text-slate-400">
-          <FormattedDate date={post.data.pubDate} />
-        </p>
-      </div>
-    ))
-  }
+  <div class="not-prose grid grid-cols-1 gap-8">
+    {posts.map((post) => (
+      <ReadingLink href={`/blog/${post.id}/`} title={post.data.title} date={post.data.pubDate} mode={post.data.mode ?? 'fiction'} />
+    ))}
+  </div>
 </Main>

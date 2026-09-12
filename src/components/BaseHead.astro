@@ -6,22 +6,34 @@ import '@fontsource-variable/geist-mono';
 
 import '../styles/global.css';
 import { SITE_TITLE } from '../consts';
+import { ClientRouter } from 'astro:transitions';
 interface Props {
 	title: string;
 	description: string;
 	image?: string;
+  mode?: 'fiction' | 'tech';
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description } = Astro.props;
+const pageMode = Astro.props.mode ?? (['/collection/', '/stories/'].includes(Astro.url.pathname) ? 'fiction' : null);
 ---
 
-<script is:inline>
-  document.documentElement.dataset.mode =
-    new URLSearchParams(location.search).get('mode') ||
-    localStorage.getItem('mode') ||
-    'fiction';
+<ClientRouter fallback="swap" />
+<meta name="site-page-mode" content={['/', '/contact/'].includes(Astro.url.pathname) ? 'both' : pageMode ?? 'auto'} />
+
+<script is:inline define:vars={{ pageMode }}>
+  (() => {
+    const sharedPage = ['/', '/contact/'].includes(location.pathname);
+    const requested = new URLSearchParams(location.search).get('mode');
+    let saved;
+    try { saved = localStorage.getItem('mode'); } catch {}
+    const valid = value => value === 'fiction' || value === 'tech';
+    // Home and contact are shared, regardless of a previous choice or query.
+    document.documentElement.dataset.mode = sharedPage ? 'both'
+      : pageMode || (valid(requested) ? requested : valid(saved) ? saved : 'fiction');
+  })();
 </script>
 
 <!-- Global Metadata -->

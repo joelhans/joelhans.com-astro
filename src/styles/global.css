@@ -7,7 +7,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Content sections (homepage bios, blog posts) */
+/* Blog filters. Both homepage bios are always visible. */
 [data-show="tech"] { display: none; }
 html[data-mode="tech"] [data-show="tech"] { display: block; }
 html[data-mode="tech"] [data-show="fiction"] { display: none; }
@@ -77,7 +77,6 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-  background: rgb(235, 245, 242);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	font-size: 18px;
