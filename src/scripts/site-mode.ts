@@ -46,6 +46,7 @@ function destinationMode(event: TransitionBeforeSwapEvent): Mode {
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const animations = new Set<Animation>();
 let navigationId = 0;
+let navigationPending = false;
 
 function animate(element: Element, frames: Keyframe[], duration: number, hold = false) {
   const animation = element.animate(frames, {
@@ -92,7 +93,8 @@ document.addEventListener('click', event => {
   const link = event.target.closest<HTMLAnchorElement>('a[href]');
   if (!link || link.hasAttribute('download') || link.hasAttribute('data-astro-reload')) return;
   if (link.target && link.target !== '_self') return;
-  if (link.href === location.href) event.preventDefault();
+  // During navigation, the current link can cancel a pending switch away.
+  if (link.href === location.href && !navigationPending) event.preventDefault();
 }, { capture: true });
 
 // Keep the current page readable while Astro fetches the next one. Fade only
@@ -100,9 +102,13 @@ document.addEventListener('click', event => {
 document.addEventListener('astro:before-preparation', event => {
   const navigation = event as TransitionBeforePreparationEvent;
   const id = ++navigationId;
+  navigationPending = true;
   cancelMotion();
   navigation.signal.addEventListener('abort', () => {
-    if (id === navigationId) cancelMotion();
+    if (id === navigationId) {
+      navigationPending = false;
+      cancelMotion();
+    }
   }, { once: true });
   const load = navigation.loader;
   navigation.loader = async () => {
@@ -146,6 +152,7 @@ document.addEventListener('astro:before-swap', event => {
 });
 
 document.addEventListener('astro:after-swap', () => {
+  navigationPending = false;
   syncMode(document.documentElement.dataset.mode as Mode);
 });
 document.addEventListener('astro:page-load', () => {
