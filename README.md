@@ -2,9 +2,7 @@
 
 My little home on the internet, with room for fiction and tech. Built with Astro, MDX, and Tailwind.
 
-[![Watch the homepage and fiction/tech switcher in action](docs/media/homepage-preview.png)](docs/media/homepage.mp4)
-
-[Watch the 16-second walkthrough (MP4)](docs/media/homepage.mp4): both bios, then the changing colors, content, and drawn lines.
+https://github.com/user-attachments/assets/483b6fc9-b41f-41ca-a12f-7fc51553efed
 
 - [The homepage](src/pages/index.astro) shows both bios and each side’s latest thought. Home and Contact stay neutral.
 - [Header](src/components/Header.astro) shows navigation for the selected side. [PathMark](src/components/PathMark.astro) supplies the curved fiction line and stepped tech line.
