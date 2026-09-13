@@ -20,8 +20,27 @@ html[data-mode="tech"] [data-mode-show="fiction"] { display: none; }
 
 @theme {
   --font-sans: 'Archivo Variable', 'Inter', 'sans-serif';
-  --font-serif: 'Alegreya Variable', 'serif';
+  --font-body: 'Figtree Variable', sans-serif;
   --font-mono: 'Geist Mono Variable', monospace;
+
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1rem;
+  --text-xl: 1.125rem;
+  --text-2xl: 1.375rem;
+  --text-3xl: 1.6875rem;
+  --text-4xl: 2.0625rem;
+}
+
+/* Scale prose without changing the page spacing or column widths. */
+article.prose {
+  font-size: var(--text-base);
+}
+
+@media (min-width: 64rem) {
+  article.prose {
+    font-size: var(--text-xl);
+  }
 }
 
 @utility prose {
@@ -36,6 +55,10 @@ html[data-mode="tech"] [data-mode-show="fiction"] { display: none; }
             }
         }
     }
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 :root {
@@ -57,7 +80,7 @@ body {
   background: rgb(235, 245, 242);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.7;
 }
 strong,

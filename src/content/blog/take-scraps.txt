@@ -1,0 +1,171 @@
+
+Leadership often looks to content teams for pipeline. How many qualified leads
+did an article or video create? How much revenue? MQLs? What are the inputs and
+outputs, _exactly_?
+
+You still need to continuously justify the value of giving more than you take.
+_Constantly_. At ngrok, we do a lot of that by talking very openly about our
+ideas in a dedicated content channel in Slack and writing up weekly updates that
+go out to the whole team on Linear. Simple tactics that remind everyone that we
+work with intention and passion.
+
+It's also very easy to let slide. You have to be keenly aware of the questions
+that signal you're starting to take more than you give.
+
+- What if the readers and viewers need us more than we need them?
+- Maybe we quickly make a few posts on these keywords for agents and, like, sneak them out on the blog?
+- Can't we just make "great content" around this specific set of keywords?
+
+
+
+
+## Learning is not the same as becoming smarter
+
+I've been working for the last few months on a 
+
+In the process of building that project, I've learned plenty of new things.
+`tshark`, ARP, DHCP, dnsmasq. Learning is wonderful. 
+
+I could write articles or create videos defining what they are or how they work.
+
+
+
+Instead, I'm trying to become smarter about the ways these systems intricately
+connect, despite having separate concerns, to work in near-instantaneous
+concert. I'm searching for the joy in seeing into, and then much more deeply
+understanding, the shadows between the systems I have always taken for granted.
+
+This is the point of what we create at ngrok, too. This is how we give more than
+we take.
+
+Learning that things exist, or how to define them, or how to very tactically
+implement them, is not bad. It's also not meant to be the destination.
+
+Someone ought to read or watch something we've made and find new understanding
+of how processes relate to one another or how to make better, more independent
+decisions about the things they build because of it. They ought to notice things
+that were previously invisible to them.
+
+If we give more than we take, 
+
+
+
+I might not need to use packet capture to diagnose my home Wi-Fi any time soon,
+but _now I know I can_. I might not need to practically use my newfound
+knowledge about how ARP maps IP addresses to MAC addresses across a broadcast
+network, but I do have newfound joy in having become smarter in the ways they
+
+
+
+
+
+Learning is becoming aware that things exist. Bec
+
+I could help someone learn that ARP and DHCP exist and how to define them. I
+help them be smarter by giving them the opportunity to see into, and through, 
+
+
+People ought to leave smarter from the things you produce. I don't mean aware of
+new facts, technologies, or products. That's table stakes.
+
+They ought to find new understanding of how processes relate to one another or
+how to make better, more independent decisions about the things they build
+because of it. They ought to notice things that were previously invisible to
+them.
+
+By giving more than you take, you let them linger with those joyous moments in
+which they see into the shadows between the things they thoughts they knew.
+
+## How we do this day to day
+
+
+
+
+I’d make these four moves:
+
+
+ 2. Define “leave smarter” through that experience. You mean understanding relationships, making independent decisions, and noticing things that were previously invisible. Keep the joy here; don’t reduce every benefit to
+    productivity.
+
+ 3. Use n8n to show how that belief changes an editorial decision. Explain why you spend time on Compose and separate services. Drop the claim that a straightforward setup tutorial teaches nothing. Show what your
+    approach adds.
+
+ 4. End with the business rationale. Readers can observe your curiosity, care, and willingness to learn. You hope that earns their attention when you have a product to discuss. Your existing final line about becoming a
+    power user of solving their problem fits here.
+
+ I’d set aside the agent-content section for now. It introduces another argument that needs its own support. Keep the leadership discussion brief.
+
+
+
+
+
+I'll admit the gesture, at first glance, feels obvious. Give someone something
+they like and maybe they'll give you something in return. It's a classic
+DevRel/DevEd/content play.
+
+But it's also extraordinarily difficult tenet to actually commit to. If you're going to stick with it for the long haul, you need to recognize where it very easily falls apart.
+
+## It's tempting to believe they need you more than you need them
+
+{/* START DICTATION: The goal of much of content is to prescriptively improve the way someone uses a product or service. This idea of them becoming a local expert on your product, a champion within their organization of a particular service. It sounds wonderful. It's a motion that, if it could work, and I think that's a big if in a lot of cases will pay dividends for you down the line, but when people are consuming, most of the people consuming the things that you create are not in that position and probably never will be */}
+
+The reality is that very few products are truly unique. There are always competition.
+
+People have choice. They are generally very happy to exercise that choice. If people don't want to use ngrok, they can choose Tailscale, Cloudflare, or one of the literal hundreds of open source, self-hosted secure tunnel projects on GitHub.
+
+The things we create need to acknowledge that they hold all the power.
+
+{/* START DICTATION: Because they hold all the power, you must be extremely generous and respectful of their time. If you're not, they will take that power elsewhere */}
+
+## It's tempting to take from things that are not human beings
+
+{/* START DICTATION: I've seen in the last few years good content teams get pigeonholed into trying to essentially take a shape of content that has worked in the past and amplify it by pointing by trying to get agents to use it. And it's this idea that catering to an agent comes without cost because you could use an agent to create the content and deliver that content to someone else's agent, and that there's this assumption that by doing so, you're doing it tax-free. You're doing it in a way that doesn't reflect on how your company is perceived out in the world. I've seen companies do this in a couple different ways. Some of them will layer these things into their more meaningful content, these kind of like AEO plays. Sometimes they will be a little bit less obvious, and they will defer all of this into like markdown documents that only agents are supposed to read. But what I believe happens is that the more instances you introduce in which you cater to agents, the more that a human being who, if a person is looking at your website, it's very strong signal, especially these days, that there's an interest in it. And every part of that experience, everything that they read, everything that they watch must feel as though it is catered toward them, a human being, someone with the capacity to ultimately make a decision about what to do. And if they see Slop essentially injected into that world, they are going to, I think, rightfully and fairly assume that you do not have their best interest as a human being at heart for the rest of the product experience*/}
+
+## It's really hard to justify
+
+Leadership often looks to content teams for pipeline. How many qualified leads
+did an article or video create? How much revenue? What are the inputs and
+outputs, _exactly_?
+
+Instead, the conversation has to be about awareness and shifting perception.
+
+The play of giving more than you take doesn't work everywere.
+
+{/* START DICTATION: I'm not going to claim that this idea of giving generously will work at every company in every situation. There are certainly situations in which you need to drive revenue. You need to drive pipeline. You need to drive MQLs. And the burden falls on you to continuously justify this motion and the value of it in terms of driving brand and perception */}
+
+## How we ask the right questions at ngrok
+
+Let me give a concrete example.
+
+We're working on a video about using n8n and ngrok together. It feels very
+natural to create a status quo video that starts with installing n8n, then
+ngrok, then cruising through the process to wire them together. Done.
+
+That would be a video that takes far more than it gives, because it assumes that
+they already know they want ngrok.
+
+Or want it at all.
+
+We want to make a video that assumes no more than they have an n8n instance
+running on `n8n` and want to make it accessible to the public internet. That's
+it.
+
+We can then ask very specific questions about the video to cut away the parts
+where we take:
+
+- How can we describe and empathize with their problems in ways that are not framed around our product? 
+- How much of ngrok can we excise and still maintain a logical story that follows a beginning, middle, and end? 
+- What does the viewer learn, and can meaningfully use, even if they stop watching just before ngrok shows up?
+
+We answer that by giving them the best possible instruction on how to make a stable, secure, and hardened public n8n instance. We hope they'll use ngrok to make it accessible to the world.
+
+It's more important they become a power user of solving their problem than a champion of ngrok.
+
+
+
+{/* START DICTATION: I'm not going to claim that this idea of giving generously will work at every company in every situation. There are certainly situations in which you need to drive revenue. You need to drive pipeline. You need to drive MQLs. And the burden falls on you to continuously justify this motion and the value of it in terms of driving brand and perception */}
+
+
+4. End with the business rationale. Readers can observe your curiosity, care, and willingness to learn. You hope
+   that earns their attention when you have a product to discuss. Your existing final line about becoming a power
+   user of solving their problem fits here.
