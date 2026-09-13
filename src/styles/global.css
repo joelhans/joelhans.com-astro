@@ -44,6 +44,13 @@ article.prose {
 }
 
 @utility prose {
+    /* Disable adding backticks around inline code. */
+    code {
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
     blockquote {
         font-weight: 400;
         font-style: normal;
