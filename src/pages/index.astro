@@ -1,7 +1,8 @@
 ---
 import Main from '../layouts/Main.astro';
+import PathMark from '../components/PathMark.astro';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
+import ReadingLink from '../components/ReadingLink.astro';
 
 const posts = (await getCollection('blog'))
   .filter(e => e.data.archive !== true)
@@ -13,58 +14,43 @@ const latestTechPost = posts.find(p => p.data.mode === 'tech');
 
 <Main
   title="Joel Hans"
-  description="Joel Hans is a writer in Tucson, Arizona."
-  pubDate={new Date('May 31 2025')}
+  description="Joel Hans writes fiction and leads developer education and marketing."
+  compact
 >
-  <div data-show="fiction">
-    <h1 class="text-[1.5rem] lg:text-[2.25rem] font-medium leading-normal !mb-2">I&rsquo;m a fiction writer.</h1>
-    <p class="not-prose font-sans text-sm text-slate-400 mb-12 lg:mb-18">
-      <button data-mode-trigger="tech" class="cursor-pointer hover:text-emerald-600 transition-colors">I also do developer education and brand &rarr;</button>
-    </p>
-    <p class="text-xl lg:text-2xl mb-12">My debut short story collection, <span class="italic [font-variant:small-caps]">The Bedtime Emptying of Our World</span>, won the 2024 Moon City Short Fiction Award from Moon City Press.</p>
-    <p><a href="/collection/">Read more about the collection &rarr;</a></p>
-    <p class="text-xl lg:text-2xl">My fiction has been published in <em>Fairy Tale Review</em>, <em>Story</em>, <em>West Branch</em>, <em>Booth: A Journal</em>, <em>Passages North</em>, <em>HAD</em>, and many others, and has been anthologized in <em>Best Small Fictions</em>. I received my MFA in fiction from the University of Arizona, and I now help edit <a href="https://astrolabe.ooo"><em>Astrolabe</em></a>, a literary journal in the form of a dynamic universe.</p>
-  </div>
+  <div class="not-prose text-[#334155]">
+    <section class="scroll-mt-8" id="fiction" aria-labelledby="fiction-heading">
+      <div class="mb-6 flex items-center gap-3 sm:gap-6">
+        <h1 id="fiction-heading" class="m-0 text-[clamp(1.5rem,3vw,2.25rem)] font-medium leading-[1.3] tracking-tight">I’m a fiction writer.</h1>
+        <PathMark mode="fiction" class="w-10 sm:w-14" />
+      </div>
+      <div>
+        <p class="mt-0 mb-5 text-xl leading-[1.7] lg:text-2xl">My debut short story collection, <span class="italic [font-variant:small-caps]">The Bedtime Emptying of Our World</span>, won the 2024 Moon City Short Fiction Award from Moon City Press.</p>
+        <p class="mt-0 mb-5 text-xl leading-[1.7] lg:text-2xl"><a class="underline decoration-[#9aafa5] underline-offset-4 hover:text-[#047857] hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-[5px] focus-visible:outline-[#047857]" href="/collection/">Read more about the collection &rarr;</a></p>
+        <p class="mt-0 mb-5 text-xl leading-[1.7] lg:text-2xl">My fiction has been published in <em>Fairy Tale Review</em>, <em>Story</em>, <em>West Branch</em>, <em>Booth: A Journal</em>, <em>Passages North</em>, <em>HAD</em>, and many others, and has been anthologized in <em>Best Small Fictions</em>. I received my MFA in fiction from the University of Arizona.</p>
+      </div>
+      <div class="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <ReadingLink href="/stories/" title="Some of my published stories from the last decade" />
+        {latestFictionPost && (
+          <ReadingLink href={`/blog/${latestFictionPost.id}/`} date={latestFictionPost.data.pubDate} title={latestFictionPost.data.title} />
+        )}
+      </div>
+    </section>
 
-  <div data-show="tech">
-    <h1 class="text-[1.5rem] lg:text-[2.25rem] font-medium leading-normal !mb-2">I&rsquo;m a brand and developer education leader.</h1>
-    <p class="not-prose font-sans text-sm text-slate-400 mb-12 lg:mb-18">
-      <button data-mode-trigger="fiction" class="cursor-pointer hover:text-emerald-600 transition-colors">I also write fiction &rarr;</button>
-    </p>
-    <p class="text-xl lg:text-2xl mb-12">I head up developer education and marketing at ngrok and I love it. Before that, I consulted for companies like Aikido Security, Rewind, Testkube, Zuplo, and Netdata through my (now-defunct, one-person) agency: <a href="https://commitcopy.com" target="_blank">Commit</a>.</p>
-    <p> 
-    <p class="text-xl lg:text-2xl">My current passion projects are <a href="https://astrolabe.ooo" target="_blank">Astrolabe</a>, a literary magazine built on Astro and a wild D3 visualization, and <a href="https://github.com/joelhans/bmo-agent" target="_blank">bmo</a>, an agent harness designed for self-improvement.</p>
+    <section class="mt-20 scroll-mt-8 lg:mt-24" id="tech" aria-labelledby="tech-heading">
+      <div class="mb-6 flex items-center gap-3 sm:gap-6">
+        <h2 id="tech-heading" class="m-0 text-[clamp(1.5rem,3vw,2.25rem)] font-medium leading-[1.3] tracking-tight">I also work in tech.</h2>
+        <PathMark mode="tech" class="w-10 sm:w-14" />
+      </div>
+      <div>
+        <p class="mt-0 mb-5 text-xl leading-[1.7] lg:text-2xl">I head up developer education, content, and the written half of brand at <a class="underline decoration-[#9aafa5] underline-offset-4 hover:text-[#047857] hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-[5px] focus-visible:outline-[#047857]" href="https://ngrok.com">ngrok</a> and I love it. Before that, I consulted for companies like Aikido Security, Rewind, Testkube, Zuplo, and Netdata through my (now-defunct, one-person) agency: Commit.</p>
+        <p class="mt-0 mb-5 text-xl leading-[1.7] lg:text-2xl">My current passion project is building a <a class="underline decoration-[#9aafa5] underline-offset-4 hover:text-[#047857] hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-[5px] focus-visible:outline-[#047857]" href="https://github.com/ngrok/little-internet" target="_blank">little internet</a> on an old desk in my office so I can learn about the many brilliant invisible layers that make our lives possible.</p>
+      </div>
+      <div class="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <ReadingLink href="/blog/?mode=tech" title="Noodlings on computers and the people who use them" />
+        {latestTechPost && (
+          <ReadingLink href={`/blog/${latestTechPost.id}/`} date={latestTechPost.data.pubDate} title={latestTechPost.data.title} />
+        )}
+      </div>
+    </section>
   </div>
-
-  {latestFictionPost && (
-    <div class="not-prose mt-16 pt-12 border-t border-slate-300 font-sans" data-show="fiction">
-      <p class="text-xs text-slate-400 uppercase tracking-widest mb-3">Latest</p>
-      <p class="text-xl font-medium mb-1">
-        <a href={`/blog/${latestFictionPost.id}/`} class="hover:text-emerald-600 transition-colors">{latestFictionPost.data.title}</a>
-      </p>
-      <p class="text-sm text-slate-400"><FormattedDate date={latestFictionPost.data.pubDate} /></p>
-    </div>
-  )}
-  {latestTechPost && (
-    <div class="not-prose mt-16 pt-12 border-t border-slate-300 font-sans" data-show="tech">
-      <p class="text-xs text-slate-400 uppercase tracking-widest mb-3">Latest</p>
-      <p class="text-xl font-medium mb-1">
-        <a href={`/blog/${latestTechPost.id}/`} class="hover:text-emerald-600 transition-colors">{latestTechPost.data.title}</a>
-      </p>
-      <p class="text-sm text-slate-400"><FormattedDate date={latestTechPost.data.pubDate} /></p>
-    </div>
-  )}
 </Main>
-
-<script>
-  document.querySelectorAll<HTMLElement>('[data-mode-trigger]').forEach(el => {
-    el.addEventListener('click', () => {
-      const mode = el.dataset.modeTrigger!;
-      document.documentElement.dataset.mode = mode;
-      localStorage.setItem('mode', mode);
-      document.querySelectorAll<HTMLButtonElement>('#mode-switch button').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.mode === mode);
-      });
-    });
-  });
-</script>

@@ -1,33 +1,43 @@
 ---
-import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu } from "astro-navbar";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import { Icon } from 'astro-icon/components'
+import PathMark from './PathMark.astro';
+
+const sharedPage = ['/', '/contact/'].includes(Astro.url.pathname);
+const modeHref = (mode: string) => `/blog/?mode=${mode}`;
 ---
 
 <header>
   <Astronav>
-    <nav class="flex items-center max-w-4xl m-auto px-8 pt-12">
+    <nav class="flex items-center max-w-4xl m-auto px-8 pt-12 bg-transparent text-[1.25rem]">
       <div class="flex w-full lg:w-auto justify-between items-start">
         <div class="flex flex-col min-[400px]:flex-row items-start min-[400px]:items-center gap-1 min-[400px]:gap-6">
-          <h2><a href="/" class="font-body text-2xl font-semibold tracking-tight hover:text-emerald-600">{SITE_TITLE}</a></h2>
-          <div id="mode-switch" class="text-slate-400 flex items-baseline gap-1">
-            <button class="font-body text-base" data-mode="fiction">fiction</button>
+          <h2><a href="/" class="font-body text-[1.5rem]/8 font-semibold tracking-tight hover:text-emerald-600">{SITE_TITLE}</a></h2>
+          {!sharedPage && <div class="flex items-center gap-3">
+          <span data-mode-show="fiction" data-nav-mark="fiction"><PathMark mode="fiction" class="w-8" /></span>
+          <span data-mode-show="tech" data-nav-mark="tech"><PathMark mode="tech" class="w-8" /></span>
+          <div id="mode-switch" aria-label="Site paths" class="text-slate-500 flex items-baseline gap-1">
+            <a href={modeHref("fiction")} class="cursor-pointer font-body text-[1rem]/6 transition-colors duration-150 hover:text-[#334155] aria-[current=true]:text-[#047857]" data-set-mode="fiction">fiction</a>
             <span class="leading-[0] relative top-[2px]" aria-hidden="true">/</span>
-            <button class="font-mono text-sm font-medium" data-mode="tech">tech</button>
+            <a href={modeHref("tech")} class="cursor-pointer font-body text-[1rem]/6 transition-colors duration-150 hover:text-[#334155] aria-[current=true]:text-[#047857]" data-set-mode="tech">tech</a>
           </div>
+          </div>}
         </div>
         <div class="z-20 block lg:hidden">
           <MenuIcon class="relative top-[5px] w-6 h-6 cursor-pointer text-gray-800" />
         </div>
       </div>
       <MenuItems class="z-10 hidden absolute w-full lg:w-auto h-full lg:h-auto inset-0 lg:relative flex lg:flex flex-col lg:flex-row items-start lg:items-center ml-auto px-8 pt-12 lg:p-0">
+        {!sharedPage && <>
         <div data-mode-show="fiction">
-          <HeaderLink href="/collection/" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Collection</HeaderLink>
-          <HeaderLink href="/stories/" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Stories</HeaderLink>
+          <HeaderLink href="/collection/" class="text-[1.5rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Collection</HeaderLink>
+          <HeaderLink href="/stories/" class="text-[1.5rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Stories</HeaderLink>
         </div>
-        <HeaderLink href="/blog/" class="text-2xl lg:text-lg hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Blog</HeaderLink>
-        <HeaderLink href="/contact/" class="text-2xl lg:text-lg hover:text-emerald-600 mb-8 lg:mb-0 lg:mr-6">Contact me</HeaderLink>
+        <HeaderLink href="/blog/" data-follow-mode class="text-[1.5rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Thoughts</HeaderLink>
+        </>}
+        <HeaderLink href="/contact/" class="text-[1.5rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-8 lg:mb-0 lg:mr-6">Contact me</HeaderLink>
         <div class="flex items-start lg:items-center mr-6">
           <a class="hover:text-emerald-600 mr-4" href="https://bsky.app/profile/joelhans.com" target="_blank">
             <span class="sr-only">Follow me on BlueSky</span>
@@ -44,43 +54,5 @@ import { Icon } from 'astro-icon/components'
 </header>
 
 <script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('#mode-switch button');
-  const currentMode = document.documentElement.dataset.mode || 'fiction';
-
-  buttons.forEach(btn => {
-    if (btn.dataset.mode === currentMode) btn.classList.add('active');
-    btn.addEventListener('click', () => {
-      const mode = btn.dataset.mode!;
-      localStorage.setItem('mode', mode);
-      const path = window.location.pathname.replace(/\/$/, '') || '/';
-      const staysInPlace = ['/', '/blog', '/contact'].includes(path);
-      if (staysInPlace) {
-        document.documentElement.dataset.mode = mode;
-        buttons.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
-      } else {
-        window.location.href = '/';
-      }
-    });
-  });
+  import '../scripts/site-mode';
 </script>
-
-<style>
-  nav {
-    --text-sm: 0.875rem;
-    --text-base: 1rem;
-    --text-lg: 1.125rem;
-    --text-2xl: 1.5rem;
-    font-size: 1.25rem;
-    background: rgb(235, 245, 242);
-  }
-  #mode-switch button {
-    cursor: pointer;
-    transition: color 0.15s;
-  }
-  #mode-switch button:hover {
-    color: rgb(51 65 85);
-  }
-  #mode-switch button.active {
-    color: rgb(5 150 105);
-  }
-</style>

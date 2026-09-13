@@ -1,0 +1,13 @@
+---
+interface Props {
+  mode: 'fiction' | 'tech';
+  class?: string;
+}
+const { mode, class: className = 'w-14' } = Astro.props;
+---
+
+<svg class:list={['block h-7 shrink-0 stroke-current stroke-[1.5] text-[#688879] [stroke-linecap:round] [stroke-linejoin:round]', className]} viewBox="0 0 64 28" fill="none" aria-hidden="true">
+  {mode === 'fiction'
+    ? <path d="M2 20 C15 20 12 6 28 6 C45 6 40 24 29 20 C20 16 37 9 47 15 C52 18 57 19 62 10" />
+    : <path d="M2 14 H14 V25 H30 V3 H46 V14 H62" />}
+</svg>

@@ -7,16 +7,21 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate } = Astro.props;
+const { title, description, pubDate, updatedDate, mode = 'fiction' } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} mode={mode} />
   </head>
-  <body class="text-slate-700">
+  <body class="text-slate-700 bg-[#ebf5f2] [html[data-mode=fiction]_&]:bg-[#f3f3e9] [html[data-mode=tech]_&]:bg-[#ecf1f7] motion-safe:transition-[background-color] motion-safe:duration-[420ms] motion-safe:ease-[ease]">
     <Header />
     <main class="max-w-4xl m-auto py-24 lg:py-48 px-8 font-body text-slate-700">
+      <a
+        href={`/blog/?mode=${mode}`}
+        aria-label={`Back to ${mode} thoughts`}
+        class="mb-8 inline-block text-base text-slate-600 underline underline-offset-4 hover:text-[#047857] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#047857]"
+      >Back to thoughts</a>
       <article class="prose lg:prose-xl prose-headings:font-medium prose-h1:text-[2.05em] lg:prose-h1:text-[2.2em] prose-h2:text-[1.4em] lg:prose-h2:text-[1.65em] prose-h3:text-[1.2em] lg:prose-h3:text-[1.4em] prose-blockquote:font-normal prose-a:hover:text-emerald-600 max-w-full">
         <h1 class="mb-2 text-balance">{title}</h1>
         <div class="font-sans text-lg mb-18">

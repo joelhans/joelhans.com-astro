@@ -1,0 +1,23 @@
+---
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  href: string;
+  title: string;
+  date?: Date;
+  mode?: 'fiction' | 'tech';
+}
+
+const { href, title, date, mode } = Astro.props;
+---
+
+<div class="not-prose min-w-0" data-show={mode}>
+  <a class="group/reading grid grid-cols-1 gap-[0.65rem] text-[#334155] no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#047857]" href={href}>
+    <span class="font-body text-[1rem] leading-normal group-hover/reading:underline group-hover/reading:underline-offset-4">{title}</span>
+    {date && (
+      <span class="font-sans text-[0.75rem] leading-normal text-[#52675d]">
+        <FormattedDate date={date} />
+      </span>
+    )}
+  </a>
+</div>
