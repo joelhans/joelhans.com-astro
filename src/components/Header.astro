@@ -11,7 +11,7 @@ const modeHref = (mode: string) => `/blog/?mode=${mode}`;
 
 <header>
   <Astronav>
-    <nav class="flex items-center max-w-4xl m-auto px-8 pt-12 bg-transparent text-[1.25rem]">
+    <nav class="relative flex items-center max-w-4xl m-auto px-8 pt-12 bg-transparent text-[1.25rem]">
       <div class="flex w-full lg:w-auto justify-between items-start">
         <div class="flex flex-col min-[400px]:flex-row items-start min-[400px]:items-center gap-1 min-[400px]:gap-6">
           <h2><a href="/" class="font-body text-[1.5rem]/8 font-semibold tracking-tight hover:text-emerald-600">{SITE_TITLE}</a></h2>
@@ -29,15 +29,15 @@ const modeHref = (mode: string) => `/blog/?mode=${mode}`;
           <MenuIcon class="relative top-[5px] w-6 h-6 cursor-pointer text-gray-800" />
         </div>
       </div>
-      <MenuItems class="z-10 hidden absolute w-full lg:w-auto h-full lg:h-auto inset-0 lg:relative flex lg:flex flex-col lg:flex-row items-start lg:items-center ml-auto px-8 pt-12 lg:p-0">
+      <MenuItems class="hidden flex lg:flex flex-col lg:flex-row items-start lg:items-center lg:ml-auto max-lg:absolute max-lg:inset-x-8 max-lg:top-full max-lg:z-30 max-lg:mt-4 max-lg:rounded-xl max-lg:bg-white max-lg:p-8 max-lg:shadow-[0_16px_40px_-12px_rgba(15,18,25,0.25)] max-lg:ring-1 max-lg:ring-slate-900/5">
         {!sharedPage && <>
         <div data-mode-show="fiction">
-          <HeaderLink href="/collection/" class="text-[1.5rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Collection</HeaderLink>
-          <HeaderLink href="/stories/" class="text-[1.5rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Stories</HeaderLink>
+          <HeaderLink href="/collection/" class="text-[1.375rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Collection</HeaderLink>
+          <HeaderLink href="/stories/" class="text-[1.375rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Stories</HeaderLink>
         </div>
-        <HeaderLink href="/blog/" data-follow-mode class="text-[1.5rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Thoughts</HeaderLink>
+        <HeaderLink href="/blog/" data-follow-mode class="text-[1.375rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-6 lg:mb-0 lg:mr-4">Thoughts</HeaderLink>
         </>}
-        <HeaderLink href="/contact/" class="text-[1.5rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-8 lg:mb-0 lg:mr-6">Contact me</HeaderLink>
+        <HeaderLink href="/contact/" class="text-[1.375rem]/8 lg:text-[1.125rem]/7 hover:text-emerald-600 mb-8 lg:mb-0 lg:mr-6">Contact me</HeaderLink>
         <div class="flex items-start lg:items-center mr-6">
           <a class="hover:text-emerald-600 mr-4" href="https://twitter.com/joelhans" target="_blank">
             <span class="sr-only">Follow me on Twitter</span>
